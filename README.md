@@ -27,7 +27,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Live site here](https://your-live-site-url.com)
+- Live Site URL: [Live site here](https://nene16.github.io/huddle-landing-page/)
 
 ## My process
 
