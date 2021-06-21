@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap');
+* {
+    margin: 0px;
+    padding:0px;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text);
+}
+
+*::before, *::after {
+    box-sizing: border-box;
+}
+
+/*
+Legend:
+    (00) Root 
+    (01) Style Color&Font
+        (1.1) Botton
+        (1.2) Botton Social
+    (02) CSS Grid
+        (2.1) 
+        (2.2) 
+        (2.3) 
+    (S) Media Device 
+        (S.1) Media Tablet
+        (S.2) Media smartphone
+*/
+
+/* (00) Root  */
+:root {
+    /* palette di base*/
+    --text: #ffffff;
+    --bcg: hsl(257, 40%, 49%);
+    --BTT: hsl(300, 69%, 71%);
+    --Shadow:rgba(0, 0, 0, 0.2);
+
+    /* font size */
+    --xl:40px;
+    --lg:24px;
+    --md:20px;
+    --sm:16px;
+
+    /* Type Weight */
+    --large: 600;
+    --regular: 400;
+
+    /* Margin and Padding */
+    --spaceXL: 96px;
+    --spaceLG: 72px;
+    --spaceMD: 48px;
+    --spaceSM: 24px;
+    --spaceXS: 12px;
+}
+
+/* (01) Body */
+body {
+    background-color:  var(--bcg);
+    background-image: url(./image/bg-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* (1.0) Style Color&Font  */
+
+.logo img {
+    display: block;
+    height: 40%;
+}
+
+.img img {
+    display: block;
+    height: 100%;
+}
+
+.header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--xl);
+    font-weight: var(--large);
+}
+.header p {
+    font-size: var(--md);
+    font-weight: var(--regular);
+}
+
+/* (1.1) Botton */
+.header a {
+    font-family: 'Poppins', sans-serif;
+    color:var(--bcg);
+    font-size: var(--md);
+    text-decoration: none;
+    background-color: var(--text);
+    padding: 16px 67px;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.header a:hover {
+    color:var(--text);
+    background-color: var(--BTT);
+}
+/* (1.2) Botton Social */
+.social a #facebook:hover,
+.social a #twitter:hover,
+.social a #instagram:hover {
+    fill: var(--BTT);
+}
+
+/* (2.0) CSS Grid  */
+
+.container {
+    display: grid;
+    grid-template-rows: 140px 1fr 40px;
+    width: 1290px;
+    height: auto;
+}
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 25px;
+}
+.header {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    align-content: flex-start;
+}
+.header p {
+    padding-top: 20px;
+}
+.header span {
+    margin-top: 40px;
+}
+.social {
+    display: flex;
+    justify-content: flex-end;
+}
+.social svg {
+    margin-left:15px;
+}
+
+
+/* (S) Media Device */
+
+/* (S.1) Laptop */
+@media all and (max-width:1289px) {
+    .container {
+        grid-template-rows: 50px 1fr 40px;
+        width: 900px;
+    }
+    .logo img {
+        display: block;
+        height: 80%;
+    }
+    .img img {
+        display: block;
+        height: 62%;
+    }
+    .main {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(300px, auto));
+        grid-gap: 7px;
+    }
+    .header {
+        margin-top: 0;
+    }
+    .social {
+        justify-content: flex-start;
+    }
+ }
+
+/*(S.2) Tablet*/
+@media all and (max-width:768px) {
+    body {
+        background-image: url(./image/bg-mobile.svg);
+        justify-content: flex-start;
+        margin-top: 40px;
+
+    }
+    
+    .container {
+        grid-template-rows: 60px 2fr 160px;
+        width: 768px;
+    }
+
+    .logo img {
+        display: block;
+        height: 80%;
+        margin-left: 96px;
+    }
+    
+    .main {
+        display: grid;
+        grid-template-columns: 760px;
+        grid-gap: 0;
+        margin-top: 80px;
+    }
+    .img img {
+        height: 80%;
+        margin: auto;
+    }
+    .header {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        width: 650px;
+        align-content: center;
+    }
+
+    .header h1 {
+        text-align: center;
+    }
+    .header p {
+        text-align: center;
+    }
+    .header span {
+        margin-top: 60px;
+        text-align: center;
+    }
+
+    .social {
+        justify-content: center;
+        align-items: center;
+    }
+    .social svg {
+        margin: 15px;
+    }
+ }
+
+/*(S.3) Smartphone*/
+ @media all and (max-width:375px) {
+    body {
+        background-image: url(./image/bg-mobile.svg);
+        justify-content: flex-start;
+        margin-top: 40px;
+    }
+    
+    .container {
+        grid-template-rows: 60px 1fr 160px;
+        width: 375px;
+    }
+
+    .logo img {
+        display: block;
+        height: 60%;
+        margin-left: 30px;
+    }
+    
+    .main {
+        display: grid;
+        grid-template-columns: 375px;
+        grid-gap: 0;
+        margin-top: 30px;
+    }
+
+    .img {
+        height: 280px;
+    }
+
+    .img img {
+        height: 80%;
+        margin: auto;
+    }
+    .header {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        width: 250px;
+        align-content: center;
+    }
+
+    .header h1 {
+        text-align: center;
+    }
+    .header p {
+        text-align: center;
+    }
+    .header span {
+        margin-top: 60px;
+        text-align: center;
+    }
+    .header h1 {
+        font-size: var(--md);
+    }
+    .header p {
+        font-size: var(--sm);
+    }
+    .social {
+        justify-content: center;
+        align-items: center;
+    }
+    .social svg {
+        margin: 15px;
+    }
+ }
+
+
+
+
+
+
+
+
+
+/*
+
+.container,
+.header,
+.image,
+.profile,
+.img,
+img,
+.social,
+.social li
+{
+    border: 1px dashed #000;
+}
+
+*/
